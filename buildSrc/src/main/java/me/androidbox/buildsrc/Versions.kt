@@ -2,7 +2,7 @@ package me.androidbox.buildsrc
 
 object Versions {
     /** Android */
-    const val hiltAndroidGradlePluginVersion = "2.28-alpha"
+    const val daggerHiltVersion = "2.28-alpha"
     const val buildToolsVersion = "30.0.0"
     const val androidLibraryVersion = "30.0.0"
     const val minSdkVersion = 21

@@ -1,8 +1,18 @@
 package me.androidbox.buildsrc
 
+import me.androidbox.buildsrc.Configuration.IMPLEMENTATION
+import me.androidbox.buildsrc.Configuration.KAPT
+import org.gradle.api.artifacts.dsl.DependencyHandler
+
 object Plugins {
     const val kotlinGradlePlugin = "org.jetbrains.kotlin:kotlin-gradle-plugin:${Versions.kotlinVersion}"
-    const val androidGralePlugin = "com.android.tools.build:gradle:${Versions.gradleVersion}"
+    const val androidGradlePlugin = "com.android.tools.build:gradle:${Versions.gradleVersion}"
+    const val hiltAndroidGradlePlugin = "com.google.dagger:hilt-android-gradle-plugin:${Versions.daggerHiltVersion}"
+}
+
+object Configuration {
+    const val IMPLEMENTATION = "implementation"
+    const val KAPT = "kapt"
 }
 
 object Libraries {
@@ -34,6 +44,13 @@ object Libraries {
     const val roomCompiler = "androidx.room:room-compiler:${Versions.roomVersion}"
     const val timber = "com.jakewharton.timber:timber:${Versions.timberVersion}"
     const val mapboxAndroidSdk = "com.mapbox.mapboxsdk:mapbox-android-sdk:${Versions.mapboxAndroidSdkVersion}"
+    const val daggerHilt = "com.google.dagger:hilt-android:${Versions.daggerHiltVersion}"
+    const val daggerHiltCompiler = "com.google.dagger:hilt-android-compiler:${Versions.daggerHiltVersion}"
+}
+
+fun DependencyHandler.daggerHilt() {
+    implementation(Libraries.daggerHilt)
+    kapt(Libraries.daggerHiltCompiler)
 }
 
 object TestLibraries {
@@ -57,4 +74,12 @@ object TestLibraries {
     const val fragmentTesting = "androidx.fragment:fragment-testing:${Versions.fragmentTestingVersion}"
     const val kakao = "com.agoda.kakao:kakao:${Versions.kakaoVersion}"
     const val coreTesting = "androidx.arch.core:core-testing:${Versions.coreTestingVersion}"
+}
+
+private fun DependencyHandler.implementation(dependencyName: String) {
+    add(IMPLEMENTATION, dependencyName)
+}
+
+private fun DependencyHandler.kapt(dependencyName: String) {
+    add(KAPT, dependencyName)
 }
