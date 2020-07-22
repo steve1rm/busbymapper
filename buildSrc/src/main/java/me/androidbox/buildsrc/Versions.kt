@@ -2,16 +2,22 @@ package me.androidbox.buildsrc
 
 object Versions {
     /** Android */
-    const val buildToolsVersion = "28.0.3"
-    const val androidLibraryVersion = "28.0.0"
-    const val minSdkVersion = 16
-    const val targetSdkVersion = 27
-    const val compileSdkVersion = 28
+    const val hiltAndroidGradlePluginVersion = "2.28-alpha"
+    const val buildToolsVersion = "30.0.0"
+    const val androidLibraryVersion = "30.0.0"
+    const val minSdkVersion = 21
+    const val targetSdkVersion = 30
+    const val compileSdkVersion = 30
     const val versionCode = 1
     const val versionName = "1.0"
-    const val kotlinVersion = "1.3.61"
+    const val kotlinVersion = "1.3.72"
     const val gradleVersion = "4.0.1"
-    const val androidXVersion = "1.0.2"
+    const val appcompatVersion = "1.1.0"
+    const val corektxVersion = "1.3.0"
+
+    /** Third Party */
+    const val mapboxAndroidSdkVersion = "9.3.0"
+    const val timberVersion = "4.7.1"
     const val gsonVersion = "2.8.5"
     const val retrofitVersion = "2.5.0"
     const val converterGsonVersion = retrofitVersion
@@ -27,7 +33,6 @@ object Versions {
     const val firebaseCrashlyticsGradleVersion = "2.0.0-beta04"
     const val firebaseCrashlyticsVersion = "17.0.0-beta04"
     const val roomVersion = "2.2.5"
-    const val timberVersion = "4.7.1"
 
     /** Testing */
     const val jUnitVersion = "4.12"
@@ -36,10 +41,10 @@ object Versions {
     const val robolectricVersion = "4.3"
     const val mockitoAndroidVersion = "2.27.0"
     const val runnerVersion = "1.1.1"
-    const val espressoCoreVersion = "3.1.1"
+    const val espressoCoreVersion = "3.2.0"
     const val espressoContribVersion = "2.0.0"
     const val mockWebServerVersion = "3.14.0"
-    const val androidxJunitVersion = "1.0.0"
+    const val androidxJunitVersion = "1.1.1"
     const val androidxTruthVersion = "1.0.0"
     const val androidxCoreVersion = "1.1.0"
     const val androidxRulesVersion = "1.1.0"

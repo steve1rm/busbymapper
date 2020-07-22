@@ -7,7 +7,8 @@ object Plugins {
 
 object Libraries {
     const val kotlinStdlib = "org.jetbrains.kotlin:kotlin-stdlib:${Versions.kotlinVersion}"
-    const val appCompat = "androidx.appcompat:appcompat:${Versions.androidXVersion}"
+    const val coreKtx = "androidx.core:core-ktx:${Versions.corektxVersion}"
+    const val appCompat = "androidx.appcompat:appcompat:${Versions.appcompatVersion}"
     const val gson = "com.google.code.gson:gson:${Versions.gsonVersion}"
     const val converterGson = "com.squareup.retrofit2:converter-gson:${Versions.converterGsonVersion}"
     const val retrofit2 = "com.squareup.retrofit2:retrofit:${Versions.retrofitVersion}"
@@ -32,6 +33,7 @@ object Libraries {
     const val roomRxJava = "androidx.room:room-rxjava2:${Versions.roomVersion}"
     const val roomCompiler = "androidx.room:room-compiler:${Versions.roomVersion}"
     const val timber = "com.jakewharton.timber:timber:${Versions.timberVersion}"
+    const val mapboxAndroidSdk = "com.mapbox.mapboxsdk:mapbox-android-sdk:${Versions.mapboxAndroidSdkVersion}"
 }
 
 object TestLibraries {
