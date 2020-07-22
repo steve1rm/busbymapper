@@ -32,9 +32,18 @@ android {
         }
     }
 
+    buildFeatures {
+        viewBinding = true
+        dataBinding = true
+    }
+
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_1_8
         targetCompatibility = JavaVersion.VERSION_1_8
+    }
+
+    kotlinOptions {
+        jvmTarget = JavaVersion.VERSION_1_8.toString()
     }
 }
 
@@ -43,9 +52,6 @@ dependencies {
     implementation(Libraries.coreKtx)
     implementation(Libraries.appCompat)
     implementation(Libraries.constraintLayout)
-
-    implementation("com.google.dagger:hilt-android:2.28-alpha")
-    kapt("com.google.dagger:hilt-android-compiler:2.28-alpha")
 
     daggerHilt()
 
@@ -58,4 +64,8 @@ dependencies {
     /** Android testing */
     androidTestImplementation(TestLibraries.espressoCore)
     androidTestImplementation(TestLibraries.androidxJunit)
+}
+
+kapt {
+    correctErrorTypes = true
 }
