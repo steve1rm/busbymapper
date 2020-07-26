@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">presentation</string>
+    <string name="mapboxAccessToken" translatable="false">"sk.eyJ1Ijoic3RldmVraXRrYXQiLCJhIjoiY2tjd3c0Zjh6MGk0MDJxcWxybTN0MXhibyJ9.29jyQWgr4XhBMNxRHb1SKg"</string>
 </resources>

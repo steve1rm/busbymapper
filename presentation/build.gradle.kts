@@ -9,6 +9,7 @@ plugins {
     kotlin("android.extensions")
     kotlin("kapt")
     id("dagger.hilt.android.plugin")
+    id("kotlin-android")
 }
 
 android {
@@ -52,6 +53,9 @@ dependencies {
     implementation(Libraries.coreKtx)
     implementation(Libraries.appCompat)
     implementation(Libraries.constraintLayout)
+    implementation("androidx.legacy:legacy-support-v4:1.0.0")
+    implementation("androidx.navigation:navigation-fragment-ktx:2.3.0")
+    implementation("androidx.navigation:navigation-ui-ktx:2.3.0")
 
     daggerHilt()
 
