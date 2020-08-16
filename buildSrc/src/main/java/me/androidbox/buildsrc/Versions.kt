@@ -16,7 +16,7 @@ object Versions {
     const val corektxVersion = "1.3.0"
 
     /** Third Party */
-    const val mapboxAndroidSdkVersion = "9.3.0"
+    const val mapboxAndroidSdkVersion = "9.3.1"
     const val timberVersion = "4.7.1"
     const val gsonVersion = "2.8.5"
     const val retrofitVersion = "2.5.0"
