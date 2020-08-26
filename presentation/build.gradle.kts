@@ -57,10 +57,13 @@ dependencies {
     implementation("androidx.navigation:navigation-fragment-ktx:2.3.0")
     implementation("androidx.navigation:navigation-ui-ktx:2.3.0")
 
-    daggerHilt()
-
     /** Third party */
     implementation(Libraries.mapboxAndroidSdk)
+    daggerHilt()
+    implementation(Libraries.rxPermissions)
+    implementation(Libraries.rxjava)
+    implementation(Libraries.rxkotlin)
+    implementation(Libraries.rxAndroid)
 
     /** Unit testing */
     testImplementation(TestLibraries.junit)

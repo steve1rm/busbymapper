@@ -46,6 +46,7 @@ object Libraries {
     const val mapboxAndroidSdk = "com.mapbox.mapboxsdk:mapbox-android-sdk:${Versions.mapboxAndroidSdkVersion}"
     const val daggerHilt = "com.google.dagger:hilt-android:${Versions.daggerHiltVersion}"
     const val daggerHiltCompiler = "com.google.dagger:hilt-android-compiler:${Versions.daggerHiltVersion}"
+    const val rxPermissions = "com.github.tbruyelle:rxpermissions:${Versions.rxpermissionsVersion}"
 }
 
 fun DependencyHandler.daggerHilt() {

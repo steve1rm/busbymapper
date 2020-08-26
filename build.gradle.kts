@@ -30,6 +30,9 @@ allprojects {
                 create<BasicAuthentication>("Basic")
             }
         }
+        maven {
+            url = uri("https://jitpack.io")
+        }
     }
 }
 
