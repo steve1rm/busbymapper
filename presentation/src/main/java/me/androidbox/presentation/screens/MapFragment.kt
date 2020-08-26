@@ -2,11 +2,13 @@ package me.androidbox.presentation.screens
 
 import android.Manifest
 import android.Manifest.permission.*
+import android.content.pm.PackageManager
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.app.ActivityCompat
 import androidx.fragment.app.Fragment
 import com.mapbox.mapboxsdk.maps.MapView
 import com.tbruyelle.rxpermissions2.RxPermissions
@@ -14,6 +16,7 @@ import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.rxkotlin.addTo
 import io.reactivex.rxkotlin.subscribeBy
 import me.androidbox.presentation.databinding.FragmentMapBinding
+import pl.charmas.android.reactivelocation2.ReactiveLocationProvider
 
 class MapFragment : Fragment() {
 
@@ -46,7 +49,7 @@ class MapFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         RxPermissions(this)
-            .request(READ_PHONE_STATE)
+            .request(READ_PHONE_STATE, ACCESS_FINE_LOCATION)
             .subscribeBy(
                 onNext = { isGranted ->
                     if(isGranted) {
@@ -54,11 +57,30 @@ class MapFragment : Fragment() {
                         mapView.getMapAsync {
                             Log.d("MAPBOX", "ONMAPREADY ${it.isDebugActive}")
                         }
+
+                        getLocation()
                     }
                 },
-                onError = { Log.e("", it.localizedMessage) }
+                onError = { Log.e("", it.localizedMessage ?: "") }
             )
             .addTo(compositeDisposable)
+
+
+    }
+
+    private fun getLocation() {
+        if (ActivityCompat.checkSelfPermission(requireContext(), ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED) {
+            ReactiveLocationProvider(requireContext())
+                .lastKnownLocation
+                .subscribeBy(
+                    onNext = { location ->
+                        Log.d(MapFragment::class.java.name, "${location.latitude}  ${location.longitude}")
+                    },
+                    onError = {
+                        Log.e(MapFragment::class.java.name, it.localizedMessage ?: "")
+                    }
+                ).addTo(compositeDisposable)
+        }
     }
 
     override fun onDestroyView() {

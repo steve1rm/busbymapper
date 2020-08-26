@@ -34,6 +34,7 @@ object Versions {
     const val firebaseCrashlyticsVersion = "17.0.0-beta04"
     const val roomVersion = "2.2.5"
     const val rxpermissionsVersion = "0.11"
+    const val androidReactiveLocation2Version = "2.1@aar"
 
     /** Testing */
     const val jUnitVersion = "4.12"

@@ -47,6 +47,7 @@ object Libraries {
     const val daggerHilt = "com.google.dagger:hilt-android:${Versions.daggerHiltVersion}"
     const val daggerHiltCompiler = "com.google.dagger:hilt-android-compiler:${Versions.daggerHiltVersion}"
     const val rxPermissions = "com.github.tbruyelle:rxpermissions:${Versions.rxpermissionsVersion}"
+    const val androidReactiveLocation = "pl.charmas.android:android-reactive-location2:${Versions.androidReactiveLocation2Version}"
 }
 
 fun DependencyHandler.daggerHilt() {

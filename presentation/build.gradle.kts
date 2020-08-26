@@ -56,6 +56,7 @@ dependencies {
     implementation("androidx.legacy:legacy-support-v4:1.0.0")
     implementation("androidx.navigation:navigation-fragment-ktx:2.3.0")
     implementation("androidx.navigation:navigation-ui-ktx:2.3.0")
+    implementation("com.google.android.gms:play-services-location:17.0.0")
 
     /** Third party */
     implementation(Libraries.mapboxAndroidSdk)
@@ -64,6 +65,7 @@ dependencies {
     implementation(Libraries.rxjava)
     implementation(Libraries.rxkotlin)
     implementation(Libraries.rxAndroid)
+    implementation(Libraries.androidReactiveLocation)
 
     /** Unit testing */
     testImplementation(TestLibraries.junit)
