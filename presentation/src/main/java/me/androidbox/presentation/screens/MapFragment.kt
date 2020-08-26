@@ -10,6 +10,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.core.app.ActivityCompat
 import androidx.fragment.app.Fragment
+import com.google.android.gms.location.LocationRequest
 import com.mapbox.mapboxsdk.maps.MapView
 import com.tbruyelle.rxpermissions2.RxPermissions
 import io.reactivex.disposables.CompositeDisposable
@@ -71,7 +72,7 @@ class MapFragment : Fragment() {
     private fun getLocation() {
         if (ActivityCompat.checkSelfPermission(requireContext(), ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED) {
             ReactiveLocationProvider(requireContext())
-                .lastKnownLocation
+                .getUpdatedLocation(buildLocationRequest())
                 .subscribeBy(
                     onNext = { location ->
                         Log.d(MapFragment::class.java.name, "${location.latitude}  ${location.longitude}")
@@ -81,6 +82,17 @@ class MapFragment : Fragment() {
                     }
                 ).addTo(compositeDisposable)
         }
+    }
+
+    private fun buildLocationRequest(): LocationRequest {
+        return LocationRequest
+            .create()
+            .apply {
+                priority = LocationRequest.PRIORITY_HIGH_ACCURACY
+                numUpdates = 1
+                interval = 1 * 1_000L
+                fastestInterval = 1 * 1_000L
+            }
     }
 
     override fun onDestroyView() {
