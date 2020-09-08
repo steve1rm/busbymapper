@@ -11,7 +11,10 @@ import android.view.ViewGroup
 import androidx.core.app.ActivityCompat
 import androidx.fragment.app.Fragment
 import com.google.android.gms.location.LocationRequest
+import com.mapbox.mapboxsdk.camera.CameraPosition
+import com.mapbox.mapboxsdk.geometry.LatLng
 import com.mapbox.mapboxsdk.maps.MapView
+import com.mapbox.mapboxsdk.maps.Style
 import com.tbruyelle.rxpermissions2.RxPermissions
 import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.rxkotlin.addTo
@@ -34,7 +37,7 @@ class MapFragment : Fragment() {
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         bindings = FragmentMapBinding.inflate(inflater, container, false)
-
+        mapView.onCreate(savedInstanceState)
         return bindings.root
     }
 
@@ -54,11 +57,6 @@ class MapFragment : Fragment() {
             .subscribeBy(
                 onNext = { isGranted ->
                     if(isGranted) {
-                        mapView.onCreate(savedInstanceState)
-                        mapView.getMapAsync {
-                            Log.d("MAPBOX", "ONMAPREADY ${it.isDebugActive}")
-                        }
-
                         getLocation()
                     }
                 },
@@ -76,6 +74,20 @@ class MapFragment : Fragment() {
                 .subscribeBy(
                     onNext = { location ->
                         Log.d(MapFragment::class.java.name, "${location.latitude}  ${location.longitude}")
+
+                        mapView.getMapAsync {
+                            Log.d("MAPBOX", "ONMAPREADY ${it.isDebugActive}")
+
+                            val cameraPosition = CameraPosition.Builder().apply {
+                                target(LatLng(location.latitude, location.longitude))
+                            }.build()
+
+                            it.cameraPosition = cameraPosition
+                      //      it.setStyle(Style.OUTDOORS)
+                            it.setStyle(Style.Builder().fromUri("mapbox://styles/mapbox/cjf4m44iw0uza2spb3q0a7s41"))
+                            it.getLatLngBoundsZoomFromCamera(cameraPosition)
+                        }
+
                     },
                     onError = {
                         Log.e(MapFragment::class.java.name, it.localizedMessage ?: "")
@@ -97,6 +109,7 @@ class MapFragment : Fragment() {
 
     override fun onDestroyView() {
         compositeDisposable.clear()
+        mapView.onDestroy()
         super.onDestroyView()
     }
 }
