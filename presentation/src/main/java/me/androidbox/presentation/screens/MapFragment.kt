@@ -1,7 +1,7 @@
 package me.androidbox.presentation.screens
 
-import android.Manifest
-import android.Manifest.permission.*
+import android.Manifest.permission.ACCESS_FINE_LOCATION
+import android.Manifest.permission.READ_PHONE_STATE
 import android.content.pm.PackageManager
 import android.os.Bundle
 import android.util.Log
