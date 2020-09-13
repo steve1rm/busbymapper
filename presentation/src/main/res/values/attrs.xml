@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="FeatureMapView">
+        <attr name="topStartRadius" format="float"/>
+        <attr name="topEndRadius" format="float"/>
+        <attr name="bottomStartRadius" format="float"/>
+        <attr name="bottomEndRadius" format="float"/>
+        <attr name="featureRadius" format="float"/>
+        <attr name="featureName" format="string"/>
+        <attr name="featureNameBackground" format="color"/>
+        <attr name="featureIcon" format="reference"/>
+        <attr name="featureBackground" format="color"/>
+    </declare-styleable>
+</resources>
