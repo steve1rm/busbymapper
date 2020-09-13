@@ -7,7 +7,6 @@ import android.util.AttributeSet
 import android.view.View
 import android.widget.FrameLayout
 import android.widget.ImageView
-import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.core.content.ContextCompat
@@ -52,9 +51,9 @@ class FeatureMapView @JvmOverloads constructor(context: Context, attributeSet: A
     }
 
     private fun setupCornerRadius(styleAttributes: TypedArray) {
-        val backgroundDrawable = flBackground.background.mutate()
+        val frameLayoutDrawable = flBackground.background.mutate()
 
-        if(backgroundDrawable is GradientDrawable) {
+        if(frameLayoutDrawable is GradientDrawable) {
             val topStartRadius = styleAttributes.getDimensionPixelSize(
                 R.styleable.FeatureMapView_topStartRadius, 0).toFloat()
             val topEndRadius = styleAttributes.getDimensionPixelSize(
@@ -67,7 +66,7 @@ class FeatureMapView @JvmOverloads constructor(context: Context, attributeSet: A
                 R.styleable.FeatureMapView_featureRadius, 0).toFloat()
 
             if(radius != 0F) {
-                backgroundDrawable.cornerRadius = radius
+                frameLayoutDrawable.cornerRadius = radius
             }
             else {
                 val radiusFloatArray = floatArrayOf(
@@ -80,7 +79,7 @@ class FeatureMapView @JvmOverloads constructor(context: Context, attributeSet: A
                     bottomEndRadius,
                     bottomEndRadius)
 
-                backgroundDrawable.cornerRadii = radiusFloatArray
+                frameLayoutDrawable.cornerRadii = radiusFloatArray
             }
         }
     }

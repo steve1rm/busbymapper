@@ -43,22 +43,22 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView" />
 
-    <androidx.constraintlayout.widget.Group
-        android:id="@+id/group"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
-
     <me.androidbox.presentation.views.FeatureMapView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:featureName="Walking maps"
-        app:featureIcon="@drawable/ic_walkingmap"
-        app:featureNameBackground="@android:color/holo_green_light"
+        app:bottomEndRadius="@dimen/space_8"
+        app:bottomStartRadius="@dimen/space_8"
         app:featureBackground="@color/colorCondition"
-        app:featureRadius="@dimen/space_8"
+        app:featureIcon="@drawable/ic_walkingmap"
+        app:featureName="Walking maps"
+        app:featureNameBackground="@android:color/holo_blue_light"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView2" />
+        app:layout_constraintTop_toBottomOf="@+id/textView2"
+        app:topEndRadius="@dimen/space_8"
+        app:topStartRadius="@dimen/space_8" >
+
+    </me.androidbox.presentation.views.FeatureMapView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
