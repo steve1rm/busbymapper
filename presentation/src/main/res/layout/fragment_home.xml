@@ -43,7 +43,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView" />
 
-
     <me.androidbox.presentation.views.FeatureMapView
         android:id="@+id/mvAddressFinder"
         android:layout_width="wrap_content"
@@ -54,12 +53,9 @@
         app:featureIcon="@drawable/ic_walkingmap"
         app:featureName="Walking maps"
         app:featureNameBackground="@android:color/holo_blue_light"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView2"
         app:topEndRadius="@dimen/space_8"
-        app:topStartRadius="@dimen/space_8" />
+        app:topStartRadius="@dimen/space_8"
+        tools:ignore="MissingConstraints" />
 
     <me.androidbox.presentation.views.FeatureMapView
         android:id="@+id/mvCompass"
@@ -71,12 +67,9 @@
         app:featureIcon="@drawable/ic_walkingmap"
         app:featureName="Walking maps"
         app:featureNameBackground="@android:color/holo_blue_light"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView2"
         app:topEndRadius="@dimen/space_8"
-        app:topStartRadius="@dimen/space_8" />
+        app:topStartRadius="@dimen/space_8"
+        tools:ignore="MissingConstraints" />
 
     <me.androidbox.presentation.views.FeatureMapView
         android:id="@+id/mvDirections"
@@ -88,12 +81,9 @@
         app:featureIcon="@drawable/ic_walkingmap"
         app:featureName="Walking maps"
         app:featureNameBackground="@android:color/holo_blue_light"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView2"
         app:topEndRadius="@dimen/space_8"
-        app:topStartRadius="@dimen/space_8" />
+        app:topStartRadius="@dimen/space_8"
+        tools:ignore="MissingConstraints" />
 
     <me.androidbox.presentation.views.FeatureMapView
         android:id="@+id/mvLiveTraffic"
@@ -105,12 +95,9 @@
         app:featureIcon="@drawable/ic_walkingmap"
         app:featureName="Walking maps"
         app:featureNameBackground="@android:color/holo_blue_light"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView2"
         app:topEndRadius="@dimen/space_8"
-        app:topStartRadius="@dimen/space_8" />
+        app:topStartRadius="@dimen/space_8"
+        tools:ignore="MissingConstraints" />
 
     <me.androidbox.presentation.views.FeatureMapView
         android:id="@+id/mvNearMe"
@@ -122,12 +109,9 @@
         app:featureIcon="@drawable/ic_walkingmap"
         app:featureName="Walking maps"
         app:featureNameBackground="@android:color/holo_blue_light"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView2"
         app:topEndRadius="@dimen/space_8"
-        app:topStartRadius="@dimen/space_8" />
+        app:topStartRadius="@dimen/space_8"
+        tools:ignore="MissingConstraints" />
 
     <me.androidbox.presentation.views.FeatureMapView
         android:id="@+id/mvSatellite"
@@ -139,12 +123,9 @@
         app:featureIcon="@drawable/ic_walkingmap"
         app:featureName="Walking maps"
         app:featureNameBackground="@android:color/holo_blue_light"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView2"
         app:topEndRadius="@dimen/space_8"
-        app:topStartRadius="@dimen/space_8" />
+        app:topStartRadius="@dimen/space_8"
+        tools:ignore="MissingConstraints" />
 
     <me.androidbox.presentation.views.FeatureMapView
         android:id="@+id/mvPlacesOfInterest"
@@ -156,12 +137,9 @@
         app:featureIcon="@drawable/ic_walkingmap"
         app:featureName="Walking maps"
         app:featureNameBackground="@android:color/holo_blue_light"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView2"
         app:topEndRadius="@dimen/space_8"
-        app:topStartRadius="@dimen/space_8" />
+        app:topStartRadius="@dimen/space_8"
+        tools:ignore="MissingConstraints" />
 
     <me.androidbox.presentation.views.FeatureMapView
         android:id="@+id/mvWalkingMaps"
@@ -173,17 +151,25 @@
         app:featureIcon="@drawable/ic_walkingmap"
         app:featureName="Walking maps"
         app:featureNameBackground="@android:color/holo_blue_light"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView2"
         app:topEndRadius="@dimen/space_8"
-        app:topStartRadius="@dimen/space_8" />
+        app:topStartRadius="@dimen/space_8"
+        tools:ignore="MissingConstraints" />
 
     <androidx.constraintlayout.helper.widget.Flow
         android:id="@+id/flow2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:layout_marginEnd="40dp"
+        app:flow_firstHorizontalBias="0"
+        app:flow_horizontalAlign="start"
+        app:flow_horizontalBias="0"
+        app:flow_horizontalGap="38dp"
+        app:flow_verticalGap="16dp"
+        app:flow_horizontalStyle="packed"
+        app:flow_verticalAlign="center"
+        app:flow_wrapMode="chain"
+        app:constraint_referenced_ids="mvAddressFinder,mvCompass,mvDirections,mvLiveTraffic,mvNearMe,mvSatellite,mvPlacesOfInterest,mvWalkingMaps"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
