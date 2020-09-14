@@ -60,6 +60,7 @@ dependencies {
 
     /** Third party */
     implementation(Libraries.mapboxAndroidSdk)
+    implementation("com.android.support.constraint:constraint-layout:1.1.3")
     daggerHilt()
     implementation(Libraries.rxPermissions)
     implementation(Libraries.rxjava)

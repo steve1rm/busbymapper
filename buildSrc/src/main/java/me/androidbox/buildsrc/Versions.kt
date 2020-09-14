@@ -26,7 +26,7 @@ object Versions {
     const val rxjavaVersion = "2.2.4"
     const val rxAndroidVersion = "2.1.1"
     const val rxkotlinVersion = "2.3.0"
-    const val constraintLayoutVersion = "1.1.3"
+    const val constraintLayoutVersion = "2.0.0"
     const val recyclerViewVersion = "1.0.0"
     const val parcelerVersion = "1.1.12"
     const val lifecycleVersion = "2.1.0"
