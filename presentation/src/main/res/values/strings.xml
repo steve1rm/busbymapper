@@ -1,6 +1,5 @@
 <resources>
     <string name="app_name">presentation</string>
-    <string name="mapboxAccessToken" translatable="false">"sk.eyJ1Ijoic3RldmVraXRrYXQiLCJhIjoiY2tjd3c0Zjh6MGk0MDJxcWxybTN0MXhibyJ9.29jyQWgr4XhBMNxRHb1SKg"</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="agree_to_condition">agree to condition</string>
